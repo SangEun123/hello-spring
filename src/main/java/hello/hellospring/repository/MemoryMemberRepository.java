@@ -1,8 +1,13 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
+
+/****컴포넌트 스캔 방식***
+@Repository*/
+
 
 public class MemoryMemberRepository implements MemberRepository{
 
