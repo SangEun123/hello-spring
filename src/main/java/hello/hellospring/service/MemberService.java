@@ -12,7 +12,7 @@ import java.util.Optional;
 /**
  * The type Member service.
  */
-/****컴포넌트 스캔 방식***
+ 
 //@Service*/
 public class MemberService {
 
@@ -23,10 +23,15 @@ public class MemberService {
     /****컴포넌트 스캔 방식***
 //    @Autowired*/
 
+public class MemberService {
+
+//    멤버 서비스를 외부에서 넣어지도록 바꾸기
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
+    /*회원 서비스를 위해 멤버 리포지토리를 가져옴*/
+    private final MemberRepository memberRepository;
 
     /**
      * 회원 가입
