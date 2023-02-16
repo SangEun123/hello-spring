@@ -1,5 +1,6 @@
 package hello.hellospring.controller;
 
+
 import hello.hellospring.domain.Member;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import hello.hellospring.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 
 /*Controller의 경우 컴포넌트 스캔 방식으로만 스프링에 올라감 */
 @Controller
@@ -31,6 +36,7 @@ public class MemberController {
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }
+    
 
     @GetMapping("/members/new")
     public String createForm() {
@@ -54,5 +60,6 @@ public class MemberController {
         return "members/memberList";
 
     }
+
 
 }
