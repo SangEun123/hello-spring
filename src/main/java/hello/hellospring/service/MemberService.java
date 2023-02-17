@@ -21,16 +21,20 @@ public class MemberService {
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
+
     /**
      * 회원가입
      */
     /*비즈니스 로직 중 같은 이름이 있는 중복 회원 불가*/
     public Long join(Member member) {
-        validateDuplicateMember(member); //중복 회원 검증
-        memberRepository.save(member);
-        /*임의로 아이디 리턴*/
-        return member.getId();
+
+            validateDuplicateMember(member); //중복 회원 검증
+            memberRepository.save(member);
+            /*임의로 아이디 리턴*/
+            return member.getId();
+
     }
+
     private void validateDuplicateMember(Member member) {
         /*멤버 리포지토리에서 이름을 찾아서 가져옴*/
         memberRepository.findByName(member.getName())
@@ -39,12 +43,16 @@ public class MemberService {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
     }
+
     /**
      * 전체 회원 조회
      */
     public List<Member> findMembers() {
-        return memberRepository.findAll();
+
+            return memberRepository.findAll();
+
     }
+
     public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
