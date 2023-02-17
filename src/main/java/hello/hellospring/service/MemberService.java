@@ -4,9 +4,12 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+
+@Transactional
 public class MemberService {
 
     /*회원 서비스를 위해 멤버 리포지토리를 가져옴*/
